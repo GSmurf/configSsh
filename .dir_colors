@@ -1,0 +1,5 @@
+DIR 01;36 # directory
+LINK 00;36 # symbolic link. (If you set this to 'target' instead of a
+EXEC 00;32
+.php 00;33
+.cfm 00;35
