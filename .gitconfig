@@ -1,18 +1,26 @@
 [user]
-	email = s.salles@sicavonline.fr
-	name = Stéphane SALLES
+        email = s.salles@sicavonline.fr
+        name = Stéphane SALLES
 [core]
-	autocrlf = true
+        autocrlf = true
 [color]
-	ui = auto
+        ui = auto
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	oops = commit --amend --no-edit
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
-	br = branch -avv
+        st = status
+        ci = commit
+        co = checkout
+        oops = commit --amend --no-edit
+        lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
+        br = branch -avv
+        ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+        s = status -s
+[merge]
+        conflictStyle = diff3
 [color "branch"]
-	upstream = cyan
+        upstream = cyan
 [push]
-	default = simple
+        default = simple
+[tag]
+        sort = version:refname
+[rerere]
+        enabled = true
