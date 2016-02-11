@@ -6,26 +6,32 @@
 [color]
         ui = auto
 [alias]
-        st = status
-        ci = commit
-        cia = commit --amend
-        co = checkout
-        cp = cherry-pick
-        oops = commit --amend --no-edit
-        lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
-        #log refs
-        lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
-        # log timeline
-        lt = log --format='%h %an %ar - %s'
-        rb  = rebase
-        rbc = rebase --continue
-        rbs = rebase --skip
-        br = branch -avv
-        ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
-        sm = submodule
-        smu = submodule update --init --recursive
-        s = status -s
-        qu = log --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}...
+    s = status -s
+    last = log -1 --stat
+    cl = clone
+    unstage = reset HEAD --
+    dc = diff --cached
+    st = status
+    ci = commit
+    cia = commit --amend
+    co = checkout
+    cp = cherry-pick
+    oops = commit --amend --no-edit
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
+    #log refs
+    lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
+    # log timeline
+    lt = log --format='%h %an %ar - %s'
+    rb  = rebase
+    rbc = rebase --continue
+    rbs = rebase --skip
+    br = branch -avv
+    ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+    sm = submodule
+    smu = submodule update --init --recursive
+    qu = log --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}...
+    prev = checkout HEAD^1
+    next = "!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
         
 [merge]
         conflictStyle = diff3
