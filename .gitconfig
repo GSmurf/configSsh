@@ -12,9 +12,9 @@
         co = checkout
         oops = commit --amend --no-edit
         lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
+        qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
         br = branch -avv
-        # qu = log --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}...
-        
+
         st = status
         cia = commit --amend
         cp = cherry-pick
@@ -28,12 +28,12 @@
         ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
         sm = submodule
         smu = submodule update --init --recursive
-        
+
         # à tester
         ls-others = ls-files -o --exclude-standard
         plog = log --oneline --decorate --graph --boundary
         qf = log --format="%H" HEAD@{u}..
-        qu = log --oneline --decorate --boundary --graph HEAD@{u}...
+        qu1 = log --oneline --decorate --boundary --graph HEAD@{u}...
         quc = log --oneline --decorate --boundary --graph HEAD@{u}..
         qus = log --oneline --decorate --boundary --graph --stat -M HEAD@{u}...
         pq = log --oneline --decorate --graph -p -b HEAD@{u}...
