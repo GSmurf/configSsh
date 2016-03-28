@@ -1,60 +1,78 @@
 [user]
         email = à saisir
         name = à saisir
-[core]
-        autocrlf = true
 [color]
-        ui = auto
+    ui = true
 [alias]
-        # utilisé tous les jours
-        s = status -sb
-        f = fetch -p
-        ci = commit
-        co = checkout
-        oops = commit --amend --no-edit
-        lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
-        qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
-        br = branch -avv
+	# provenant de babun
+	last = log -1 --stat
+	cl = clone
+	unstage = reset HEAD --
+	dc = diff --cached
+	# lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 
-        prev = checkout HEAD^1
-        next = "!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
+    # utilisé tous les jours
+    s = status -sb
+    f = fetch -p
+    ci = commit
+    co = checkout
+    oops = commit --amend --no-edit
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
+    qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
+    br = branch -avv
 
-        st = status
-        cia = commit --amend
-        cp = cherry-pick
-        #log refs
-        lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
-        # log timeline
-        lt = log --format='%h %an %ar - %s'
-        rb  = rebase
-        rbc = rebase --continue
-        rbs = rebase --skip
-        ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
-        sm = submodule
-        smu = submodule update --init --recursive
+    prev = checkout HEAD^1
+    next = "!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
 
-        # à tester
-        ls-others = ls-files -o --exclude-standard
-        plog = log --oneline --decorate --graph --boundary
-        qf = log --format="%H" HEAD@{u}..
-        qu1 = log --oneline --decorate --boundary --graph HEAD@{u}...
-        quc = log --oneline --decorate --boundary --graph HEAD@{u}..
-        qus = log --oneline --decorate --boundary --graph --stat -M HEAD@{u}...
-        pq = log --oneline --decorate --graph -p -b HEAD@{u}...
-        pqr = log --oneline --decorate --reverse -p -b HEAD@{u}...
-        review = rebase --autosquash -i HEAD@{u}
-        rework = rebase --autosquash --autostash -i HEAD@{u}
-        fop = fetch -p origin
-        clog = log -g --grep-relog="checkout:" --oneline
-        pdiff = diff -w --color-words
-        pshow = show --color-words
+    st = status -sb
+    cia = commit --amend
+    cp = cherry-pick
+    #log refs
+    lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
+    # log timeline
+    lt = log --format='%h %an %ar - %s'
+    rb  = rebase
+    rbc = rebase --continue
+    rbs = rebase --skip
+    ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+    sm = submodule
+    smu = submodule update --init --recursive
+
+    # à tester
+    ls-others = ls-files -o --exclude-standard
+    plog = log --oneline --decorate --graph --boundary
+    qf = log --format="%H" HEAD@{u}..
+    qu1 = log --oneline --decorate --boundary --graph HEAD@{u}...
+    quc = log --oneline --decorate --boundary --graph HEAD@{u}..
+    qus = log --oneline --decorate --boundary --graph --stat -M HEAD@{u}...
+    pq = log --oneline --decorate --graph -p -b HEAD@{u}...
+    pqr = log --oneline --decorate --reverse -p -b HEAD@{u}...
+    review = rebase --autosquash -i HEAD@{u}
+    rework = rebase --autosquash --autostash -i HEAD@{u}
+    fop = fetch -p origin
+    clog = log -g --grep-relog="checkout:" --oneline
+    pdiff = diff -w --color-words
+    pshow = show --color-words
 [merge]
-        conflictStyle = diff3
+    conflictStyle = diff3
+	tool = vimdiff
 [color "branch"]
-        upstream = cyan
+    upstream = cyan
 [push]
-        default = simple
+    default = matching
 [tag]
-        sort = version:refname
+    sort = version:refname
 [rerere]
-        enabled = true
+    enabled = true
+[core]
+    #autocrlf = input
+	trustctime = false
+	editor = vim
+	filemode = false
+[credential]
+	helper = cache --timeout=3600
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
