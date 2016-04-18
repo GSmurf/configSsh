@@ -10,15 +10,17 @@ fi
 #alias ll='pwd && ls -lh'
 alias grep='grep --color' # l'option -n ajoute la ligne
 alias cddev='cd /home/httpd/ss'
+alias conflict='git s |grep UU'
 alias cdback='cd /home/httpd/ss/backoffice'
+alias cdariane='cd /home/httpd/ss/ariane'
+alias cdcore='cd /home/httpd/ss/core'
 alias droits='sudo chown -R ss:info /home/httpd/ss && chmod -R g+rwx /home/httpd/ss'
 alias tree='tree -C'
-alias dariane='sudo chown -R ss:info /home/httpd/ss/ariane && chmod -R 777 /home/httpd/ss/ariane/app/cache/  && chmod -R 777 /home/httpd/ss/ariane/app/logs/ && chmod -R g+w /home/httpd/ss/ariane'
-alias composer='php /home/app/bin/composer.phar'
-
+alias dariane='sudo chown -R ss:info /home/httpd/ss/ariane && sudo chmod -R 777 /home/httpd/ss/ariane/app/cache/  && sudo chmod -R 777 /home/httpd/ss/ariane/app/logs/ && sudo chmod -R g+w /home/httpd/ss/ariane && sudo chown -R ss:info /home/httpd/ss/core && sudo chmod -R 777 /home/httpd/ss/core/app/cache/ && sudo chmod -R 777 /home/httpd/ss/core/app/logs/ && sudo chmod -R g+w /home/httpd/ss/core'
+#alias composer='php /home/app/bin/composer.phar'
+alias devmaj='cdariane && git fetch -p && cdcore && git fetch -p'
 export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h\[$(tput sgr0)\]\[\033[38;5;43m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]"
 #export PATH=/home/app/bin:$PATH
-# Possibilité de prompt un peu customisé mais pas utile pour moi
 # Add git branch if its present to PS1
 # parse_git_branch() {
 # 	 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
