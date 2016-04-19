@@ -1,6 +1,6 @@
 [user]
-        email = à saisir
-        name = à saisir
+        #email = USERNAME
+        #name = REALNAME
 [core]
         autocrlf = true
 [color]
@@ -8,31 +8,58 @@
 [alias]
         # utilisé tous les jours
         s = status -sb
+        st = status
+        
+        ap = add -p
         f = fetch -p
+        
         ci = commit
-        co = checkout
+        cia = commit --amend
         oops = commit --amend --no-edit
-        lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
-        qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
+        
+        co = checkout
+        cp = cherry-pick
         br = branch -avv
 
+        # diff aliases
+        d = diff
+        ds = diff --stat
+        dc = diff --cached
+    
+        # présentation
         prev = checkout HEAD^1
         next = "!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
 
-        st = status
-        cia = commit --amend
-        cp = cherry-pick
-        #log refs
+        lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset'
+        qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
+        # Show branches with authors
+        b-ls = for-each-ref --sort=-committerdate --format='%(committerdate) %(authorname) %(refname)' refs/remotes/origin/
+        # montre toutes les branches
         lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
         # log timeline
         lt = log --format='%h %an %ar - %s'
+        ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+        
+        # Show last tag
+        lt = describe --tags --abbrev=0
+        
+        # rebase
         rb  = rebase
         rbc = rebase --continue
         rbs = rebase --skip
-        ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+        
         sm = submodule
         smu = submodule update --init --recursive
 
+        # List all defined aliases
+        aliases = "!git config -l | grep alias | cut -c 7-"
+    
+        # Pull with submodule update
+        p = !git fetch --tags && git pull --prune && git submodule update --init --recursive
+        
+        # git pull with changed files fails. This alias saves all changes in stash, does a pull and applies the stash again
+        sp = !git stash && git p && git stash pop
+    
         # à tester
         ls-others = ls-files -o --exclude-standard
         plog = log --oneline --decorate --graph --boundary
