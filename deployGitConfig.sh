@@ -7,17 +7,21 @@ $(cat ~/.gitconfig|grep 'name ='|awk '/'^$'/ { print $3" "$4 }')
 mailGit=$(cat ~/.gitconfig|grep 'email ='|awk '/'^$'/ { print $3 }')
 
 echo "Les informations GIT récupérées sont : $nomUserGit ($mailGit), vous confirmez (y/n) ?"
-read test
+read ok
 
-case $test in
+case $ok in
     "y" )
-    echo "oui"
+        echo "Remplacement des informations générique par les données : $nomUserGit ($mailGit)"
+        pattern1="s/#name = REALNAME/name = $nomUserGit/g"
+        pattern2="s/#email = USERNAME/email = $mailGit/g"
+        cp .gitconfig .gitconfigNew
+        sed -i $pattern1 .gitconfigNew
     ;;
     "n" )
-    echo "non"
+        echo "non"
     ;;
     *)
-    echo "rien"
+        echo "rien"
     ;;
 esac
 # copie du fichier du projet dans le systeme
