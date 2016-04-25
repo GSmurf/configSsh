@@ -12,10 +12,10 @@ read ok
 case $ok in
     "y" )
         echo "Remplacement des informations générique par les données : $nomUserGit ($mailGit)"
-        pattern1="s/#name = REALNAME/name = $nomUserGit/g"
-        pattern2="s/#email = USERNAME/email = $mailGit/g"
         cp .gitconfig .gitconfigNew
-        sed -i $pattern1 .gitconfigNew
+        sed -i "s/#name = REALNAME/name = ${nomUserGit}/g" .gitconfigNew 
+        sed -i "s/#email = USERNAME/email = ${mailGit}/g" .gitconfigNew 
+        mv .gitconfigNew ~/.gitconfig
     ;;
     "n" )
         echo "non"
