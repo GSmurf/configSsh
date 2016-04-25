@@ -1,6 +1,6 @@
 [user]
-	#email = USERNAME
-	#name = REALNAME
+	email = s.salles@sicavonline.fr
+	name = Stéphane SALLES
 [core]
 	autocrlf = true
 	editor = vim
@@ -81,6 +81,7 @@
 	pshow = show --color-words
 [merge]
 	conflictStyle = diff3
+	tool = vimdiff
 [color "branch"]
 	upstream = cyan
 [push]
@@ -89,3 +90,5 @@
 	sort = version:refname
 [rerere]
 	enabled = true
+[mergetool]
+	prompt = false
