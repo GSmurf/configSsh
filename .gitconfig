@@ -1,6 +1,6 @@
 [user]
-	email = s.salles@sicavonline.fr
-	name = Stéphane SALLES
+	#email = EMAIL
+	#name = NAME
 [core]
 	autocrlf = true
 	editor = vim
