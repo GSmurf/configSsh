@@ -1,2 +1,8 @@
 # TODO List
-- faire un rassemblement des scripts sh en un seul pour obtenir quelque chose du genre gitconf import ou gitconf export
+- faire un rassemblement des scripts sh en un seul pour obtenir quelque chose du genre :
+
+gitconf.sh install : créé un lien system qui permet d'utiliser le script gitconf sans complexité
+gitconf.sh import : utilise le fichier gitconfig du projet pour l'appliquer à la configuration systeme
+gitconf.sh export : utilise le fichier gitconfig system pour proposer de l'importer au projet
+gitconf update : met à jour le projet en faisant un git pull et import le gitconfig
+gitconf status : indique l'état du fichier et du projet
