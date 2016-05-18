@@ -43,6 +43,7 @@
 	# log timeline
 	lt = log --format='%h %an %ar - %s'
 	ll = log --graph --pretty="format:%C(yellow)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan)%d%Creset%n%s%n%b" --all
+	changelog = "!f() { r=${1:-`git describe --tags --abbrev=0`..HEAD}; echo Changelog for $r; git log --reverse --no-merges --format='* %s' $r; }; f"
 
 	# Show last tag
 	lt = describe --tags --abbrev=0
