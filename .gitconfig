@@ -2,7 +2,10 @@
     #email = EMAIL
     #name = NAME
 [mergetool]
+	prompt = false
     keepBackup = true
+[rerere]		
+	enabled = true
 [branch]
     autosetuprebase = remote
     autosetupmerge = true
