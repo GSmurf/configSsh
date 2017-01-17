@@ -135,3 +135,5 @@
     helper = cache --timeout=25200
 [status]
     submoduleSummary = true
+[diff]
+        submodule = log
