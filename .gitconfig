@@ -133,3 +133,5 @@
     default = current
 [credential]
     helper = cache --timeout=25200
+[status]
+    submoduleSummary = true
