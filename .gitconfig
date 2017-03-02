@@ -128,6 +128,7 @@
     filemode = true
     ignorecase = false
     excludesfile = /home/vagrant/.gitignore_global
+    autocrlf = input
 [apply]
     whitespace = fix
 [http]
