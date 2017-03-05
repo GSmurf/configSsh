@@ -1,0 +1,41 @@
+# Fichiers et astuces utilent pour installer ce serveur
+27/12/2014
+
+Configuration serveur :
+-----------------------
+- ```sudo vim /etc/motd```, pour modifier le disclaimer de connexion
+- ```vim .bashrc```, ici sont correctement ecris les alias très utile en ssh
+- ```sudo vim /etc/rc.local```, permet de lancer un script au démarrage du serveur
+- ```sudo dpkg-reconfigure tzdata```, ceci pour reconfigurer l'heure
+- ```sudo apt-get install nginx -V```, met à jour un paquet en particulier
+- ```sudo apt-get upgrade```, met à jour tous les paquets installés sur le système vers les dernières versions 
+- ```dpkg --get-selections```, lit les packages installer sur le systeme
+- ```sudo visudo```, permet de voir qui à le droit d'acces à la commande sudo
+
+Disque dur et montage :
+-----------------------
+- ```sudo mount -t ntfs-3g /dev/sda1 /mnt/usbhdd1/```, loption avec le programme ntfs-3g permet decrire sur un disque dur NTFS monté en écriture
+- ```sudo blkid```, permet de connaitre lid unique des disques dur UUID
+- ```ls -l /dev/disk/by-uuid``` , liste les disques dur et donne leur Identifiant Universel Unique
+- ```sudo vim /etc/fstab```, permet de voir les disques montés au démarrage du serveur
+- ```sudo ln -s /mnt/usbhdd1/git /git```, cette commande permet de creer un lien symbolique vers un dossier
+
+NginX :
+-------
+- ```vim /etc/nginx/sites-available/default```, le fichier de configuration par defaut de nginx
+- ```cd /usr/share/nginx/www```, l'adresse de base ou le www de nginx est installe
+
+Samba :
+-------
+- ```sudo vim /etc/samba/smb.conf```, la configuration de samba pour le partage windows =)
+
+Compression :
+-------------
+- ```tar -zcvf /tmp/test.tar.gz test/```, pour compresser en tar.gz le repertoire test dans /tmp
+- ```tar -zxvf git.tar.gz```, extraction des fichiers tar.gz
+
+Commandes utiles :
+------------------
+- ```https://github.com/srsudar/eg```, permet d'avoir des exemples d'utilistations de commandes linux
+- ```"syntax on" dans le fichier ~/.vimrc```, permet d'avoir la coloration syntaxique avec vim \o/
+- ```sudo /usr/share/nginx/www/hcc2/radioReception /usr/share/nginx/www/hcc2/action.php 5 &```, pour relever les temperatures emises par la sonde radio et les faire enregistrer par le script php
