@@ -73,6 +73,7 @@
     # One line log tree
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
     lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    qu = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an %ar)%Creset' HEAD@{u}... --boundary
     
     # List changed files of als commit
     showme = show --pretty="format:" --name-only
