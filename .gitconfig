@@ -86,7 +86,7 @@
     # Show files ignored by git
     ign = ls-files -o -i --exclude-standard
     #log refs
-    lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+    lr = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold cyan)<%an>%Creset'
     # Show last tag
     lt = describe --tags --abbrev=0
     # Delete already merged branches
