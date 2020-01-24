@@ -1,0 +1,30 @@
+
+
+# :art:          when improving the format/structure of the code
+# :pencil:       when performing minor changes/fixing the code or language
+# :racehorse:    when improving performance
+# :books:        when writing docs
+# :bug:          when reporting a bug, with @FIXMEComment Tag
+# :ambulance:    when fixing a bug
+# :fire:         when removing code or files, maybe with @CHANGED Comment Tag
+# :hammer:       when refactoring code
+# :umbrella:     when adding tests
+# :microscope:   when adding code coverage
+# :green_heart:  when fixing the CI build
+# :arrow_up:     when upgrading dependencies
+# :arrow_down:   when downgrading dependencies
+# :fast_forward: when forward-porting features from an older version/branch
+# :rewind:       when backporting features from a newer version/branch
+# :lipstick:     when improving UI/Cosmetic
+# :construction: WIP(Work In Progress) Commits, maybe with @REVIEW Comment Tag
+# :gem:          New Release
+# :bookmark:     Version Tags
+# :tada:         Initial Commit
+# :sparkles:     when introducing New Features
+# :zap:          when introducing Backward-InCompatible Features, maybe with @CHANGED Comment Tag
+# :rocket:       Anything related to Deployments/DevOps
+# :whale:        Docker Configuration
+# :handshake:    when Merge files
+# :cherries:     when Commit Arise from one or more Cherry-Pick Commit(s)
+#
+# https://github.com/slashsBin/styleguide-git-commit-message#suggested-emojis
