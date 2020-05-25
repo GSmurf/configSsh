@@ -4,7 +4,7 @@
 # :pencil:       when performing minor changes/fixing the code or language
 # :racehorse:    when improving performance
 # :books:        when writing docs
-# :bug:          when reporting a bug, with @FIXMEComment Tag
+# :bug:          when reporting a bug, with @FIXME Comment Tag
 # :ambulance:    when fixing a bug
 # :fire:         when removing code or files, maybe with @CHANGED Comment Tag
 # :hammer:       when refactoring code
