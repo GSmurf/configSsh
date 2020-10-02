@@ -24,6 +24,8 @@ alias dcup='docker-compose up -d --build'
 alias dcstop='docker-compose stop'
 alias dcrm='docker-compose stop;docker-compose rm -f'
 alias dcps='docker-compose ps'
+alias dinfo='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive'
+alias dive=dinfo
 
 # tricks
 alias meteo='curl wttr.in/Paris?format=v2'
