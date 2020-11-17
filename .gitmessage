@@ -1,4 +1,9 @@
 
+# Examples of good commit message
+# Refactor subsystem X for readability
+# Update getting started documentation
+# Remove deprecated methods
+# Release version 1.0.0
 
 # :art:          when improving the format/structure of the code
 # :pencil:       when performing minor changes/fixing the code or language
