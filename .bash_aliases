@@ -14,6 +14,7 @@ alias gdc='git diff --cached'
 alias ga='git add -p'
 alias gap='git add -p'
 alias gc='git commit'
+alias gl="git log --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset'\'' --abbrev-commit -10"
 alias conflict='git s |grep UU'
 
 # Docker alias
