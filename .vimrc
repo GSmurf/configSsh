@@ -13,7 +13,7 @@ set encoding=utf-8
 
 "------  Visual Options  ------
 syntax on
-set number
+set number relativenumber
 set nowrap
 set vb
 set ruler
